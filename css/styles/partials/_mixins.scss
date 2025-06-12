@@ -1,0 +1,11 @@
+// _mixins.scss
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin column-width($size) {
+  width: map-get($column-widths, $size);
+}

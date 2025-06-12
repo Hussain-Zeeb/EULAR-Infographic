@@ -1,0 +1,47 @@
+// _base.scss
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+// Background color utility classes
+.bg-sobi-yellow {
+  background-color: $sobi-yellow;
+}
+.bg-sobi-orange {
+  background-color: $sobi-orange;
+}
+.bg-sobi-blue {
+  background-color: $sobi-blue;
+}
+.bg-sobi-dark-grey {
+  background-color: $sobi-dark-grey;
+}
+.bg-sobi-grey-tint-20 {
+  background-color: $sobi-grey-tint-20;
+}
+.bg-sobi-grey-tint-40 {
+  background-color: $sobi-grey-tint-40;
+}
+
+// Font color utility classes
+.font-sobi-yellow {
+  color: $sobi-yellow;
+}
+.font-sobi-orange {
+  color: $sobi-orange;
+}
+.font-sobi-blue {
+  color: $sobi-blue;
+}
+.font-sobi-dark-grey {
+  color: $sobi-dark-grey;
+}
+.font-sobi-grey-tint-20 {
+  color: $sobi-grey-tint-20;
+}
+.font-sobi-grey-tint-40 {
+  color: $sobi-grey-tint-40;
+}
