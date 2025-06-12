@@ -1,0 +1,21 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Sass cache files
+.sass-cache/
+
+# Ignore compiled CSS map files
+css/*.css.map
+
+# Ignore node_modules if using npm
+node_modules/
+
+# Ignore log files
+*.log
+
+# Ignore temporary files
+*.tmp
+
+# Ignore IDE-specific files
+.vscode/
+.idea/
