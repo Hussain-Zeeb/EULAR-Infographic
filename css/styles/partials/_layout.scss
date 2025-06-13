@@ -1,12 +1,15 @@
 // filepath: /Users/zuber/Documents/Projects/FusionSolutions/Sobi/Kineret/EULAR Infographic/build/12-06-2025/css/styles/partials/_layout.scss
 
 // Layout styles
-body {
+html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 auto;
-    font-family: 'Montserrat, sans-serif';
+    color: $sobi-dark-grey;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.625rem;
 
 }
 
@@ -20,13 +23,59 @@ body {
     .container {
         display: flex;
         flex-direction: column;
-        width: 100%;
-        margin: 10px 0;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0;
+        padding: 20px;
+        
+        
 
         @media (min-width: $breakpoint-desktop) {
             flex-direction: row;
+            padding: 60px;
             //justify-content: space-between;
         }
+
+        &.one {
+            position: relative;
+            //gap: 80px;
+
+            h1 {
+
+                margin: 0px;
+            }
+
+            .chevron-down {
+                position: absolute;
+                left: 50%;
+                bottom: 0;
+                transform: translateX(-50%);
+                z-index: 2;
+
+                animation: chevron-bounce 1.2s infinite;
+
+                @keyframes chevron-bounce {
+                    0%, 100% {
+                        transform: translateX(-50%) translateY(0);
+                    }
+                    50% {
+                        transform: translateX(-50%) translateY(12px);
+                    }
+                }
+
+
+                svg {
+                    width: 58px;
+                    height: 58px;
+                    max-width: none;
+                    max-height: none;
+                }
+
+            }
+
+        }
+
+
 
         .column {
             width: 100%;
@@ -48,8 +97,33 @@ body {
                     @include column-width("1/4");
                 }
             }
+
+            .subheading {
+                position: relative;
+                padding-left: 32px;
+                margin: 0px;
+                text-transform: uppercase;
+
+
+                &::before {
+                    content: '';
+                    position: absolute;
+                    left: 7px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background: $sobi-orange;
+                    display: inline-block;
+                }
+            }
         }
+
+
     }
 }
+
+
 
 

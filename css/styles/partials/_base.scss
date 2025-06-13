@@ -1,11 +1,5 @@
 // _base.scss
 
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 // Background color utility classes
 .bg-sobi-yellow {
   background-color: $sobi-yellow;
@@ -45,3 +39,4 @@ html, body {
 .font-sobi-grey-tint-40 {
   color: $sobi-grey-tint-40;
 }
+

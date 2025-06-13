@@ -1,0 +1,40 @@
+.quick-links {
+    background: linear-gradient(to right, $sobi-yellow, $sobi-orange);
+    padding: 1.5rem;
+    color: $white;
+
+    h2 {
+        margin: 30px;
+    }
+
+    .quick-links-list {
+        position: relative;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            font-weight: 700;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            position: relative;
+            transition: background 0.2s;
+
+            .chevron {
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                opacity: 0;
+                transition: opacity 0.2s;
+                pointer-events: none;
+            }
+
+            &:hover .chevron,
+            &:focus .chevron {
+                opacity: 1;
+            }
+        }
+    }
+}

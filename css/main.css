@@ -1,19 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 h1 {
-  font-family: "Montserrat, sans-serif";
+  font-family: "Montserrat", sans-serif;
   font-weight: 700;
+  font-size: clamp(1.375rem, 0.9659rem + 2.0455vw, 2.5rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.375rem, 1.1023rem + 1.3636vw, 2.125rem);
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
 }
 
 p {
-  font-family: "Montserrat, sans-serif";
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
 }
 
 .bg-sobi-yellow {
@@ -64,12 +70,15 @@ html, body {
   color: #F1F1F1;
 }
 
-body {
+html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
-  font-family: "Montserrat, sans-serif";
+  color: #585854;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.625rem;
 }
 
 .main-container {
@@ -82,13 +91,44 @@ body {
 .main-container .container {
   display: flex;
   flex-direction: column;
-  width: 100%;
-  margin: 10px 0;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 20px;
 }
 @media (min-width: 1024px) {
   .main-container .container {
     flex-direction: row;
+    padding: 60px;
   }
+}
+.main-container .container.one {
+  position: relative;
+}
+.main-container .container.one h1 {
+  margin: 0px;
+}
+.main-container .container.one .chevron-down {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  z-index: 2;
+  animation: chevron-bounce 1.2s infinite;
+}
+@keyframes chevron-bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(12px);
+  }
+}
+.main-container .container.one .chevron-down svg {
+  width: 58px;
+  height: 58px;
+  max-width: none;
+  max-height: none;
 }
 .main-container .container .column {
   width: 100%;
@@ -98,7 +138,7 @@ body {
     width: 100%;
   }
   .main-container .container .column.column-half {
-    width: 50%;
+    width: 46%;
   }
   .main-container .container .column.column-third {
     width: 33.33%;
@@ -106,4 +146,63 @@ body {
   .main-container .container .column.column-quarter {
     width: 25%;
   }
+}
+.main-container .container .column .subheading {
+  position: relative;
+  padding-left: 32px;
+  margin: 0px;
+  text-transform: uppercase;
+}
+.main-container .container .column .subheading::before {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #EB9200;
+  display: inline-block;
+}
+
+.quick-links {
+  background: linear-gradient(to right, #FCB813, #EB9200);
+  padding: 1.5rem;
+  color: #FFFFFF;
+}
+.quick-links h2 {
+  margin: 30px;
+}
+.quick-links .quick-links-list {
+  position: relative;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.quick-links .quick-links-list li {
+  font-weight: 700;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s;
+}
+.quick-links .quick-links-list li .chevron {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+.quick-links .quick-links-list li:hover .chevron, .quick-links .quick-links-list li:focus .chevron {
+  opacity: 1;
+}
+
+.stills-disease-container {
+  background-color: #FFFFFF;
+  border-radius: 25px;
+  padding: 20px;
 }/*# sourceMappingURL=main.css.map */

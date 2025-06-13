@@ -1,11 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-$font-bold: 'Montserrat, sans-serif';
-$font-regular: 'Montserrat, sans-serif';
+$font-bold: 'Montserrat', sans-serif;
+$font-regular: 'Montserrat', sans-serif;
 
 h1 {
   font-family: $font-bold;
   font-weight: 700; // Bold weight
+  font-size: clamp(1.375rem, 0.9659rem + 2.0455vw, 2.5rem);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-family: $font-bold;
+  font-weight: 700; // Semi-bold weight
+  font-size: clamp(1.375rem, 1.1023rem + 1.3636vw, 2.125rem);
+  line-height: 1.3;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
 }
 
 p {

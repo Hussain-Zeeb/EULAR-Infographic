@@ -9,11 +9,12 @@ $sobi-blue: #2D5E77;
 $sobi-dark-grey: #585854;
 $sobi-grey-tint-20: #F7F7F7;
 $sobi-grey-tint-40: #F1F1F1;
+$white: #FFFFFF;
 
 // Define font families
-$font-stack: 'Montserrat, sans-serif';
-$font-bold: 'Montserrat, sans-serif';
-$font-regular: 'Montserrat, sans-serif';
+$font-stack: 'Montserrat', sans-serif;
+$font-bold: 'Montserrat', sans-serif;
+$font-regular: 'Montserrat', sans-serif;
 
 // Define breakpoint variables for mobile-first approach
 $breakpoint-tablet: 768px;
@@ -23,7 +24,7 @@ $breakpoint-desktop: 1024px;
 
 // Define column widths for responsive design
 $column-widths: (
-  "1/2": 50%, 
+  "1/2": 46%, 
   "1/3": 33.33%, 
   "1/4": 25%, 
   "full": 100%
