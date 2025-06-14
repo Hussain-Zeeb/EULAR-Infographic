@@ -1,0 +1,105 @@
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+
+    .card-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        justify-content: center;
+
+        .card {
+            background: $sobi-green;
+            border-radius: 1rem;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            position: relative;
+            width: 200px;
+            height: 200px;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: $white;
+            transition: box-shadow 0.2s;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                height: 0%;
+                background: linear-gradient(to top, $sobi-yellow, $sobi-orange);
+                z-index: 0;
+                transition: height 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+                pointer-events: none;
+            }
+
+
+
+            &:hover::after {
+                height: 100%;
+            }
+
+
+            img {
+                height: auto;
+                display: block;
+                margin-bottom: 1rem;
+                transition: opacity 0.2s;
+                position: relative;
+                z-index: 1;
+            }
+
+            &:hover img {
+                opacity: 1;
+            }
+
+            .text-container {
+
+                z-index: 1;
+
+                h3 {
+                    margin: 0 0 1rem 0;
+                    transition: opacity 0.2s;
+                    position: absolute;
+                    left: 40%;
+                }
+
+                p {
+                    font-weight: 700;
+                    display: none;
+                    margin: 0;
+                    transition: opacity 0.2s;
+                    position: absolute;
+                    left: 0;
+                }
+
+            }
+
+
+
+
+            &:hover .text-container h3 {
+                opacity: 0;
+                pointer-events: none;
+            }
+
+            &:hover .text-container p {
+                display: block;
+                opacity: 1;
+            }
+
+        }
+    }
+
+
+
+
+}

@@ -10,6 +10,9 @@
 .bg-sobi-blue {
   background-color: $sobi-blue;
 }
+.bg-sobi-green {
+  background-color: $sobi-green;
+}
 .bg-sobi-dark-grey {
   background-color: $sobi-dark-grey;
 }
@@ -39,4 +42,51 @@
 .font-sobi-grey-tint-40 {
   color: $sobi-grey-tint-40;
 }
+
+
+// Font family utility classes
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.text-lowercase {
+  text-transform: lowercase;
+}
+.text-capitalize {
+  text-transform: capitalize;
+}
+.text-bold {
+  font-weight: bold;
+}
+.text-italic {
+  font-style: italic;
+}
+.text-underline {
+  text-decoration: underline;
+}
+.text-decoration-none {
+  text-decoration: none;
+}
+
+
+// Flexbox utility classes
+.display-flex {
+  display: flex;
+}
+.align-items-center {
+  align-items: center;
+}
+.justify-content-center {
+  justify-content: center;
+}
+
+
 

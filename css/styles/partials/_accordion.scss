@@ -1,0 +1,67 @@
+// Clipboard container for accordion
+.clipboard-container {
+  background: url('../assets/images/clipboard.svg') center/contain no-repeat;
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  min-height: 560px; // adjust as needed
+}
+
+// Accordion styles
+.accordion {
+  width: 100%;
+  max-width: 450px;
+  background: $sobi-green;
+
+  .accordion-item + .accordion-item {
+    margin-top: 1rem;
+  }
+  .accordion-header {
+    width: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 600;
+    color: $white;
+    padding: 1rem 3rem 1rem 1.5rem;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      background-repeat: no-repeat;
+      background-size: 20px 20px;
+      background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10 4V16M4 10H16" stroke="%23fff" stroke-width="2" stroke-linecap="round"/></svg>');
+      transition: background-image 0.2s;
+    }
+    &[aria-expanded="true"]::after {
+      background-image: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 10H16" stroke="%23fff" stroke-width="2" stroke-linecap="round"/></svg>');
+    }
+  }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4,0,0.2,1);
+    background: $sobi-green;
+    color: $white;
+    padding: 0 1.5rem;
+    font-size: 0.9rem;
+  }
+  .accordion-header[aria-expanded="true"] + .accordion-content {
+    padding: 0rem 1.5rem;
+  }
+}
