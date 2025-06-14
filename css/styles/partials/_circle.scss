@@ -1,0 +1,86 @@
+.circle-icons-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+
+  .circle-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: $sobi-orange; // or any color
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+    .icon-label {
+      text-align: center;
+      font-size: 1rem;
+    }
+  }
+}
+
+.circle-arc-wrapper {
+  position: relative;
+  width: 310px;
+  height: 450px;
+  margin: 0 auto 2rem auto;
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+  align-items: flex-end;
+
+  .main-circle {
+    width: 310px;
+    height: 310px;
+    border-radius: 50%;
+    background: linear-gradient(to top, $sobi-yellow, $sobi-orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+    .main-text {
+      color: #fff;
+      font-size: 1.4rem;
+      text-align: center;
+    }
+  }
+
+  .arc-icon {
+    position: absolute;
+    width: 245px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: $sobi-orange;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+    .icon-label {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: 700;
+      line-height: 1.2rem;
+    }
+  }
+
+  // Place each icon at a different angle (arc)
+  .arc-icon-1 { top: 0%; left: 50%; transform: translate(-50%, 0); }
+  .arc-icon-2 { top: 14%; left: 123%; transform: translate(-50%, 0); }
+  .arc-icon-3 { top: 14%; left: -20%; transform: translate(-50%, 0); }
+}

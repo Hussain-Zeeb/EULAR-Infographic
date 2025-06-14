@@ -56,5 +56,18 @@ $(function() {
     });
   }
 
+  // Scroll to top button logic
+  const $scrollTopBtn = $('.scroll-to-top');
+  $(window).on('scroll', function() {
+    if ($(window).scrollTop() > 200) {
+      $scrollTopBtn.addClass('visible');
+    } else {
+      $scrollTopBtn.removeClass('visible');
+    }
+  });
+  $scrollTopBtn.on('click', function() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
   // Place other jQuery content here as needed
 });

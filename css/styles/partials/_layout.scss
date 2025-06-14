@@ -11,6 +11,8 @@ html, body {
     font-family: 'Montserrat', sans-serif;
     line-height: 1.625rem;
 
+    scroll-behavior: smooth;
+
 }
 
 .main-container {
@@ -85,6 +87,14 @@ html, body {
                     @include column-width("full");
                 }
 
+                &.column-two-third {
+                    @include column-width("2/3");
+                }
+
+                &.column-three-fith {
+                    @include column-width("3/5");
+                }
+
                 &.column-half {
                     @include column-width("1/2");
                 }
@@ -126,6 +136,39 @@ html, body {
 
 
 
+}
+
+// Scroll to top button
+
+.scroll-to-top {
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: $sobi-orange;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+
+  &.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+    display: block;
+    stroke: #fff;
+  }
 }
 
 

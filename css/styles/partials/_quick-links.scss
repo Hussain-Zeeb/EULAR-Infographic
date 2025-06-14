@@ -1,6 +1,7 @@
 .quick-links {
     background: linear-gradient(to right, $sobi-yellow, $sobi-orange);
     padding: 1.5rem;
+    padding-bottom: 3rem;
     color: $white;
 
     h2 {
@@ -34,6 +35,11 @@
             &:hover .chevron,
             &:focus .chevron {
                 opacity: 1;
+            }
+
+            a {
+                color: $white;
+                text-decoration: none;
             }
         }
     }
