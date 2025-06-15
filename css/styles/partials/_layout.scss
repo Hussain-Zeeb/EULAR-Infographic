@@ -81,6 +81,7 @@ html, body {
 
         .column {
             width: 100%;
+            align-content: center;
 
             @media (min-width: $breakpoint-desktop) {
                 & {
@@ -126,6 +127,8 @@ html, body {
                     border-radius: 50%;
                     background: $sobi-orange;
                     display: inline-block;
+                    opacity: var(--circle-opacity, 0);
+                    transition: opacity 0.2s;
                 }
             }
         }
@@ -136,6 +139,13 @@ html, body {
 
 
 
+}
+
+// Footer styles
+.references {
+
+    padding-left:15px;
+   
 }
 
 // Scroll to top button

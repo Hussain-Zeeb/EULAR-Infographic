@@ -45,6 +45,19 @@
     justify-content: center;
     z-index: 2;
 
+        &::before {
+        content: '';
+        position: absolute;
+        top: 32px; // half the circle's height (if circle is 24px)
+        left: 15%;
+        transform: translateX(-50%);
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        background: $sobi-grey-tint-40; // or your page background color for a cutout effect
+        z-index: 2;
+        }
+
     .main-text {
       color: #fff;
       font-size: 1.4rem;
