@@ -1,7 +1,8 @@
 // filepath: /Users/zuber/Documents/Projects/FusionSolutions/Sobi/Kineret/EULAR Infographic/build/12-06-2025/css/styles/partials/_layout.scss
 
 // Layout styles
-html, body {
+html,
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,12 +16,18 @@ html, body {
 
 }
 
+sup {
+    line-height: 1.1em;
+    font-size: 70%;
+    vertical-align: top;
+}
+
 .main-container {
     display: flex;
     flex-direction: column;
     width: 100%;
     max-width: 1200px;
-    padding: 30px 0;
+    padding: 0px 0 30px 0;
 
     .container {
         display: flex;
@@ -29,8 +36,8 @@ html, body {
         flex-wrap: wrap;
         margin: 0;
         padding: 20px;
-        
-        
+
+
 
         @media (min-width: $breakpoint-desktop) {
             flex-direction: row;
@@ -40,39 +47,87 @@ html, body {
 
         &.one {
             position: relative;
+            padding-bottom: 100px;
             //gap: 80px;
+
+            @media (min-width: $breakpoint-tablet) {
+                padding-bottom: 20px;
+            }
 
             h1 {
 
                 margin: 0px;
             }
 
-            .chevron-down {
-                position: absolute;
-                left: 50%;
-                bottom: 0;
-                transform: translateX(-50%);
-                z-index: 2;
 
-                animation: chevron-bounce 1.2s infinite;
 
-                @keyframes chevron-bounce {
-                    0%, 100% {
-                        transform: translateX(-50%) translateY(0);
-                    }
-                    50% {
-                        transform: translateX(-50%) translateY(12px);
-                    }
+        }
+
+        &#section-unified {
+
+            position: relative;
+            padding-bottom: 90px;
+        }
+
+        &#section-monitoring {
+
+            h4 {
+
+                margin-top: 120px; 
+                
+                @media (min-width: $breakpoint-tablet) {
+                    margin-top: 13%;
+                    
+                }
+            }
+        }
+
+        &#section-biologics {
+
+            .stacking-order {
+                display: flex;
+                flex-wrap: wrap;
+                width: 100%;
+                
+                @media (min-width: $breakpoint-desktop) {
+                  .order-1 { order: 1; }
+                  .order-2 { order: 2; }
+                  .order-3 { order: 4; }
+                  .order-4 { order: 3; }
+                }
+              }
+
+        }
+
+
+
+        .chevron-down {
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            z-index: 2;
+
+            animation: chevron-bounce 1.2s infinite;
+
+            @keyframes chevron-bounce {
+
+                0%,
+                100% {
+                    transform: translateX(-50%) translateY(0);
                 }
 
-
-                svg {
-                    width: 58px;
-                    height: 58px;
-                    max-width: none;
-                    max-height: none;
+                50% {
+                    transform: translateX(-50%) translateY(12px);
                 }
+            }
 
+
+            svg {
+                width: 58px;
+                height: 58px;
+                max-width: none;
+                max-height: none;
             }
 
         }
@@ -144,43 +199,39 @@ html, body {
 // Footer styles
 .references {
 
-    padding-left:15px;
-   
+    padding-left: 15px;
+
 }
 
 // Scroll to top button
 
 .scroll-to-top {
-  position: fixed;
-  right: 2rem;
-  bottom: 2rem;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  border: none;
-  background: $sobi-orange;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 1000;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: none;
+    background: $sobi-orange;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
 
-  &.visible {
-    opacity: 1;
-    pointer-events: auto;
-  }
+    &.visible {
+        opacity: 1;
+        pointer-events: auto;
+    }
 
-  svg {
-    width: 24px;
-    height: 24px;
-    display: block;
-    stroke: #fff;
-  }
+    svg {
+        width: 24px;
+        height: 24px;
+        display: block;
+        stroke: #fff;
+    }
 }
-
-
-
-

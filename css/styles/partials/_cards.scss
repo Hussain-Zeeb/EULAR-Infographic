@@ -62,45 +62,48 @@
             }
 
             .text-container {
-
                 z-index: 1;
+                position: relative;
+                width: 100%;
 
                 h3 {
                     margin: 0 0 1rem 0;
-                    transition: opacity 0.2s;
+                    transition: opacity 0.35s 0.35s; // delay fade-in on mouseout
                     position: absolute;
                     left: 50%;
-                    top: 50%;
+                    top: 30px;
                     transform: translate(-50%, -50%);
+                    opacity: 1;
                 }
 
                 p {
                     font-weight: 700;
                     font-size: 0.9rem;
                     line-height: 1.2rem;
-                    display: none;
                     margin: 0;
-                    transition: opacity 0.2s;
+                    transition: opacity 0.35s; // no delay on fade-out
                     position: absolute;
                     left: 50%;
-                    top: 100px;
+                    top: 0;
                     transform: translateX(-50%);
                     width: 90%;
+                    opacity: 0;
                 }
-
             }
 
 
 
 
-            &:hover .text-container h3 {
+            &:hover .text-container h3,
+            &.active .text-container h3 {
                 opacity: 0;
-                pointer-events: none;
+                transition: opacity 0.35s; // no delay on fade-out
             }
 
-            &:hover .text-container p {
-                display: block;
+            &:hover .text-container p,
+            &.active .text-container p {
                 opacity: 1;
+                transition: opacity 0.35s 0.35s; // fade-in after h3 fades out
             }
 
         }

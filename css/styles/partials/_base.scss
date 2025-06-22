@@ -167,3 +167,20 @@
 .padding-1 {
   padding: 1rem;
 }
+
+
+
+.h-mobile {
+
+  display: none;
+
+  @media (min-width: $breakpoint-tablet) {
+    display: block;
+  }
+}
+
+
+
+.fade-in-up {
+  opacity: 0;
+}

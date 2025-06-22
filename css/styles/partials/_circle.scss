@@ -26,18 +26,17 @@
 }
 
 .circle-arc-wrapper {
-  position: relative;
-  width: 310px;
-  height: 450px;
-  margin: 0 auto 2rem auto;
   display: flex;
-  justify-content: center;
-  align-content: flex-end;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 0 auto 2rem auto;
 
   .main-circle {
-    width: 310px;
-    height: 310px;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
     background: linear-gradient(to top, $sobi-yellow, $sobi-orange);
     display: flex;
@@ -66,9 +65,9 @@
   }
 
   .arc-icon {
-    position: absolute;
-    width: 245px;
-    height: auto;
+    position: static;
+    width: 100%;
+    margin: 0.5rem 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,8 +91,28 @@
     }
   }
 
-  // Place each icon at a different angle (arc)
-  .arc-icon-1 { top: 0%; left: 50%; transform: translate(-50%, 0); }
-  .arc-icon-2 { top: 14%; left: 123%; transform: translate(-50%, 0); }
-  .arc-icon-3 { top: 14%; left: -20%; transform: translate(-50%, 0); }
+  .arc-icon-1, .arc-icon-2, .arc-icon-3 {
+    top: auto;
+    left: auto;
+    transform: none;
+  }
+
+  @media (min-width: $breakpoint-tablet) {
+    flex-direction: row;
+    align-items: flex-end;
+    width: 310px;
+    height: 450px;
+    .arc-icon {
+      position: absolute;
+      width: 245px;
+      height: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .arc-icon-1 { top: 0%; left: 50%; transform: translate(-50%, 0); }
+    .arc-icon-2 { top: 14%; left: 123%; transform: translate(-50%, 0); }
+    .arc-icon-3 { top: 14%; left: -20%; transform: translate(-50%, 0); }
+  }
 }
