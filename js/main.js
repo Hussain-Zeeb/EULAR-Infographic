@@ -329,27 +329,29 @@ $(function() {
     // Automatically reload the browser 1.5 seconds after resize ends
     let browserReloadTimeout;
     window.addEventListener('resize', function() {
-      clearTimeout(browserReloadTimeout);
-      browserReloadTimeout = setTimeout(function() {
-        window.location.reload();
-      }, 1000);
+      if (window.innerWidth >= 768) {
+        clearTimeout(browserReloadTimeout);
+        browserReloadTimeout = setTimeout(function() {
+          window.location.reload();
+        }, 1000);
+      }
     });
 
 
-// Ensure correct anchor scroll and ScrollTrigger refresh on load
-$(window).on('load', function() {
-  if (window.location.hash) {
-    const anchor = document.querySelector(window.location.hash);
-    if (anchor) {
-      anchor.scrollIntoView();
-      setTimeout(function() {
-        if (window.ScrollTrigger) {
-          ScrollTrigger.refresh(true);
+    // Ensure correct anchor scroll and ScrollTrigger refresh on load
+    $(window).on('load', function() {
+      if (window.location.hash) {
+        const anchor = document.querySelector(window.location.hash);
+        if (anchor) {
+          anchor.scrollIntoView();
+          setTimeout(function() {
+            if (window.ScrollTrigger) {
+              ScrollTrigger.refresh(true);
+            }
+          }, 1000); // allow layout to settle before refresh
         }
-      }, 1000); // allow layout to settle before refresh
-    }
-  }
-});
+      }
+    });
 
 
 });
