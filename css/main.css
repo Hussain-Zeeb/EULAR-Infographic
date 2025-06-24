@@ -293,12 +293,13 @@ sup {
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 0;
-  padding: 20px;
+  padding: 20px 20px 60px 20px;
+  position: relative;
 }
 @media (min-width: 1024px) {
   .main-container .container {
     flex-direction: row;
-    padding: 60px;
+    padding: 60px 60px 90px 60px;
   }
 }
 .main-container .container.one {
@@ -312,10 +313,6 @@ sup {
 }
 .main-container .container.one h1 {
   margin: 0px;
-}
-.main-container .container#section-unified {
-  position: relative;
-  padding-bottom: 90px;
 }
 .main-container .container#section-monitoring h4 {
   margin-top: 120px;

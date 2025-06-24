@@ -6,7 +6,7 @@ $(function() {
 
   $items.on('mouseenter focus', function() {
     var $li = $(this);
-    var offsetTop = $li.position().top + ($li.outerHeight() - $chevron.outerHeight()) / 2;
+    var offsetTop = $li.position().top + ($li.outerHeight() - $chevron.outerHeight()) / 2 + 4;
     $chevron.css({
       top: offsetTop + 'px',
       opacity: 1
@@ -72,6 +72,23 @@ $(function() {
   });
 
 
+    $('.section-with-chevron').each(function(i) {
+    var $sections = $('.section-with-chevron');
+    var $next = $sections.eq(i + 1);
+    if ($next.length) {
+        var target = '#' + $next.attr('id');
+        var chevronMarkup = `
+        <a href="${target}" class="chevron-link">
+            <span class="chevron-down" aria-hidden="true" style="">
+            <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 24L29 37L42 24" stroke="#EB9200" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            </span>
+        </a>
+        `;
+        $(this).append(chevronMarkup);
+    }
+    });
 
 
 
