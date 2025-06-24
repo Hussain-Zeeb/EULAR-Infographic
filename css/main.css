@@ -48,6 +48,24 @@ p {
   line-height: 1.5;
 }
 
+.no-animations *, .no-animations *:before, .no-animations *:after {
+  transition: none !important;
+  animation: none !important;
+}
+
+.no-animations .fade-in-up,
+.no-animations .scale-elastic-on-scroll,
+.no-animations .gsap-animated,
+.no-animations [style*="opacity: 0"] {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.no-animations #mask-rect1,
+.no-animations #mask-rect2 {
+  width: 100% !important;
+}
+
 .bg-sobi-yellow {
   background-color: #FCB813;
 }
