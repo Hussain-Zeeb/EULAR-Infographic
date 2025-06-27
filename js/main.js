@@ -1,3 +1,7 @@
+// Force scroll to top on reload (Cmd+R or browser refresh)
+window.history.scrollRestoration = "manual";
+window.scrollTo(0, 0);
+
 $(function() {
   // Quick Links Chevron Navigation
   var $quickLinksList = $('.quick-links-list');
@@ -71,6 +75,7 @@ $(function() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
+    // Add chevron links to sections with class 'section-with-chevron'
 
     $('.section-with-chevron').each(function(i) {
     var $sections = $('.section-with-chevron');
@@ -78,7 +83,7 @@ $(function() {
     if ($next.length) {
         var target = '#' + $next.attr('id');
         var chevronMarkup = `
-        <a href="${target}" class="chevron-link">
+        <a href="${target}" class="chevron-link" data-scroll>
             <span class="chevron-down" aria-hidden="true" style="">
             <svg width="58" height="58" viewBox="0 0 58 58" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 24L29 37L42 24" stroke="#EB9200" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
@@ -129,7 +134,8 @@ $(function() {
               start: "top 80%",
               //markers: true, // Enable markers for debugging
               toggleActions: "play reset play reset",
-              invalidateOnRefresh: true
+              invalidateOnRefresh: true,
+
             }
           }
         );
@@ -143,7 +149,7 @@ $(function() {
           trigger: path1,
           start: "top 80%",
           toggleActions: "play reset play reset",
-          invalidateOnRefresh: true
+          invalidateOnRefresh: true,
         }
       });
       gsap.to(path2, {
@@ -155,7 +161,8 @@ $(function() {
           trigger: path2,
           start: "top 80%",
           toggleActions: "play reset play reset",
-          invalidateOnRefresh: true
+          invalidateOnRefresh: true,
+          
         }
       });
       fadeInReset(path3, 2.5); // adjust delay as needed
@@ -249,6 +256,7 @@ $(function() {
             end: 'top 40%',
             scrub: true,
             toggleActions: 'play reverse play reverse',
+            invalidateOnRefresh: true,
           }
         }
       );
@@ -333,15 +341,15 @@ $(function() {
 
 
     // Improved ScrollTrigger refresh on resize
-    if (window.ScrollTrigger) {
+/*       if (window.ScrollTrigger) {
       let resizeTimeout;
       window.addEventListener('resize', () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
           ScrollTrigger.refresh(true); // use safe mode for accurate marker placement
-        }, 1000); // shorter debounce for responsiveness
+        }, 2300); // shorter debounce for responsiveness
       });
-    }
+    } */
 
     // Automatically reload the browser 1.5 seconds after resize ends
     let browserReloadTimeout;
@@ -350,25 +358,32 @@ $(function() {
         clearTimeout(browserReloadTimeout);
         browserReloadTimeout = setTimeout(function() {
           window.location.reload();
-        }, 1000);
+        }, 2000);
       }
     });
 
+
+    $('a[data-scroll]').on('click', function(e) {
+      e.preventDefault();
+      var targetId = $(this).attr('href').replace('#', '');
+      var $target = $('#' + targetId);
+      if ($target.length) {
+        $target[0].scrollIntoView({ behavior: 'smooth' });
+        // No ScrollTrigger.refresh here
+      }
+    });
+  
 
     // Ensure correct anchor scroll and ScrollTrigger refresh on load
-    $(window).on('load', function() {
-      if (window.location.hash) {
-        const anchor = document.querySelector(window.location.hash);
-        if (anchor) {
-          anchor.scrollIntoView();
-          setTimeout(function() {
-            if (window.ScrollTrigger) {
-              ScrollTrigger.refresh(true);
-            }
-          }, 1000); // allow layout to settle before refresh
+/*     $(window).on('load', function() {
+      setTimeout(function() {
+        if (window.ScrollTrigger) {
+          ScrollTrigger.refresh(true);
         }
-      }
-    });
+      }, 1000); // 1 second delay to allow layout to settle
+    }); */
 
 
 });
+
+

@@ -465,6 +465,7 @@ sup {
   padding-bottom: 3rem;
   color: #FFFFFF;
   margin: 40px 0;
+  position: relative;
 }
 .quick-links::before {
   content: "";
@@ -513,11 +514,12 @@ sup {
 }
 
 .stills-disease-container {
+  width: 100%;
   background-color: #FFFFFF;
   border-radius: 25px;
-  padding: 3rem 2rem;
-  display: flex;
-  flex: 1 1 0;
+  padding: 6rem 2rem;
+  display: block;
+  margin: auto;
 }
 
 .cards-container {
@@ -843,6 +845,7 @@ sup {
   align-items: center;
   justify-content: center;
   z-index: 2;
+  position: relative;
 }
 .circle-arc-wrapper .main-circle::before {
   content: "";
